@@ -50,6 +50,7 @@ WINDOW *win_choose() {
   */
   while(1) {
     c = wgetch(menu);
+
     switch (c) {
       case KEY_UP:
         if(highlight == 1)
@@ -76,6 +77,8 @@ WINDOW *win_choose() {
   WINDOW *win_func;
   switch (choice) {
     case 1:
+      destroy_win(menu);
+      destroy_win(lw);
       win_func = win_funcionario();
     break;
     case 2:
